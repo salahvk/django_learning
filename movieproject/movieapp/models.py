@@ -14,6 +14,8 @@ class MovieInfo(models.Model):
     description=models.TextField()
     poster=models.ImageField(upload_to='images/',null=True)
     censor_details=models.OneToOneField(CensorInfo,on_delete=models.SET_NULL,related_name='movie',null=True)
+    # can use foreignkey for one to many relation
+    # many to many field
     def __str__(self) :
         return self.title
 
